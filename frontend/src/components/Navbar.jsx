@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import Modal from "./Modal";
+//import Modal from "./Modal";
 
 export default function Navbar() {
   const { user, dispatch } = useAuth();
@@ -10,7 +10,7 @@ export default function Navbar() {
   };
   return (
     <nav className="flex justify-between items-center mx-auto p-2 w-[40%] text-xl h-[10%] text-gray-500">
-      <Modal />
+      {/* <Modal /> */}
       <Link to="/">
         <img src="./node.js.svg" alt="mern-auth-logo" className="w-10" />
       </Link>

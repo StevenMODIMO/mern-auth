@@ -11,23 +11,23 @@ const userSchema = new mongoose.Schema({
 
 userSchema.statics.signup = async function (email, password) {
   if (!email || !password) {
-    throw Error("Empty fields detected");
+    throw Error("Empty fields detected.");
   }
 
   if (!isEmail(email)) {
-    throw Error("Invalid email address");
+    throw Error("Invalid email address.");
   }
 
   if (!isStrongPassword(password)) {
     throw Error(
-      "Password must contain special character, small and capital lettersF"
+      "Password must contain special characters,numbers,small and capital letter."
     );
   }
 
   const user = await this.findOne({ email });
 
   if (user) {
-    throw Error("Email already in use");
+    throw Error("Email already in use.");
   }
 
   const SALT = await bcrypt.genSalt(10);
@@ -40,19 +40,19 @@ userSchema.statics.signup = async function (email, password) {
 
 userSchema.statics.login = async function (email, password) {
   if (!email || !password) {
-    throw Error("Empty fields detected");
+    throw Error("Empty fields detected.");
   }
 
   const user = await this.findOne({ email });
 
   if (!user) {
-    throw Error("Incorrect email");
+    throw Error("Incorrect email.");
   }
 
   const match = await bcrypt.compare(password, user.password);
 
   if (!match) {
-    throw Error("Incorrect password");
+    throw Error("Incorrect password.");
   }
 
   return user;
