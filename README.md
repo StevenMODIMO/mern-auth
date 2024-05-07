@@ -14,7 +14,7 @@ Navigate to where you want to store the code
 
 Then run the following command
 
-`git clone https://github.com/StevenMODIMO/mern-auth`
+`git clone https://github.com/StevenMODIMO/mern-auth.git`
 
 Navigate to the cloned repo
 
