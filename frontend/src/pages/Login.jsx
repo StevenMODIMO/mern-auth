@@ -7,7 +7,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { dispatch } = useAuth();
 
@@ -38,7 +38,7 @@ export default function Login() {
       setEmail("");
       setPassword("");
       setError(null);
-      navigate("/")
+      navigate("/");
     }
   };
   return (
@@ -68,6 +68,12 @@ export default function Login() {
         <button className="font-semibold text-lg bg-purple-300 w-fit mx-auto rounded p-2">
           Log in
         </button>
+        <p className="text-center m- text-gray-400">
+          or continue with
+          <span className="m-2">
+            <hr />
+          </span>
+        </p>
         {error && (
           <div className="text-center text-red-500 font-semibold p-4 bg-purple-200 rounded absolute top-28 right-8">
             {error}

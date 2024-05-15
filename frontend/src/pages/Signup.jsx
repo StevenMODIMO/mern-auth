@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-// import { motion, AnimatePresence } from "motion"
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -71,6 +70,12 @@ export default function Signup() {
         <button className="font-semibold text-lg bg-purple-300 w-fit mx-auto rounded p-2">
           Sign Up
         </button>
+        <p className="text-center m- text-gray-400">
+          or continue with
+          <span className="m-2">
+            <hr />
+          </span>
+        </p>
         {error && (
           <div className="text-center text-red-500 font-semibold p-4 bg-purple-200 rounded absolute top-28 right-8">
             {error}
